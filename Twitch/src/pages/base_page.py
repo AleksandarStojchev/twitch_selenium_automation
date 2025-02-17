@@ -35,10 +35,15 @@ class BasePage:
             lambda d: d.execute_script("return document.readyState") == "complete"
         )
     def take_screenshot(self):
+
+        # Wait until the Pause button is visible
+        self.wait.until(EC.visibility_of_element_located(
+            (By.XPATH, "//div[@data-test-selector='video-player__video-layout']//button[@aria-label='Pause']")
+        ))
+
         file_dir = os.path.join(os.getcwd(), "screenshots")
         os.makedirs(file_dir, exist_ok=True)
         file_path = os.path.join(file_dir, "streamer_screenshot.png")
-        time.sleep(2)
         self.driver.save_screenshot(file_path)
 
     def scroll_up_down(self, pixels, scroll_times):
