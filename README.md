@@ -16,5 +16,3 @@
 ![twitch_test_running](https://github.com/user-attachments/assets/5616cb8a-a274-447c-9e0b-f955706630d9)
 
 
-**_Note_**
-_Instead of using time.sleep(), I would use explicit waits (WebDriverWait). In work environment I would aks Devs for an element which loads last on the page/component and I would wait for it to be loaded._
