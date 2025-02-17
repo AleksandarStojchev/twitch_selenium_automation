@@ -47,8 +47,6 @@ class BasePage:
         self.driver.save_screenshot(file_path)
 
     def scroll_up_down(self, pixels, scroll_times):
-        self.wait_for_page_load()
-        time.sleep(1)
         for _ in range(scroll_times):
             self.driver.execute_script("window.scrollBy(0, arguments[0]);", pixels)
 
