@@ -20,10 +20,10 @@ class BasePage:
         self.find_element(locator).click()
 
     def click_element_from_search(self, content_name):
-        locator = (By.XPATH, "//div/p[normalize-space(text())='{content}']".format(content =content_name))
+        locator = (By.XPATH, "//div/p[normalize-space(text())='{content}'][@class='CoreText-sc-1txzju1-0 bqCGPR']"
+                   .format(content =content_name))
         self.wait.until(EC.element_to_be_clickable(locator))
 
-        time.sleep(1)
         self.click_element(locator)
 
     def click_nth_streamer(self, nth):
